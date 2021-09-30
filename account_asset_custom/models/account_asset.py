@@ -57,7 +57,7 @@ class AccountAsset(models.Model):
     
     def _compute_values(self):
         for asset in self:
-            if self.is_depreciated:
+            if asset.is_depreciated:
                 asset.salvage_value = 0
                 asset.value_residual = 0
             else:
